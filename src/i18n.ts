@@ -5,24 +5,26 @@ import fr from '@/utils/localization/fr.json';
 import es from '@/utils/localization/es.json';
 import de from '@/utils/localization/de.json';
 
+const resources = {
+  en: {
+    translation: en,
+  },
+  fr: {
+    translation: fr,
+  },
+  es: {
+    translation: es,
+  },
+  de: {
+    translation: de,
+  },
+};
+
 i18next.use(initReactI18next).init({
   lng: 'en',
   fallbackLng: 'en',
   debug: true,
-  resources: {
-    en: {
-      translation: en,
-    },
-    fr: {
-      translation: fr,
-    },
-    es: {
-      translation: es,
-    },
-    de: {
-      translation: de,
-    },
-  },
+  resources,
 });
 
 export default i18next;
