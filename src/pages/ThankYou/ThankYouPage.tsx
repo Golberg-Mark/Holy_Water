@@ -135,12 +135,25 @@ const DownloadAnswers = styled.button`
     color: #fff;
     transition: .1s ease-in-out;
     
-    &:hover {
-        color: rgb(228, 34, 156);
-        
-        & path {
-            transition: .1s ease-in-out;
-            fill: rgb(228, 34, 156);
+    @media (hover: hover) {
+        &:hover {
+            color: rgb(228, 34, 156);
+
+            & path {
+                transition: .1s ease-in-out;
+                fill: rgb(228, 34, 156);
+            }
+        }
+    }
+    
+    @media (hover: none) {
+        &:active {
+            color: rgb(228, 34, 156);
+
+            & path {
+                transition: .1s ease-in-out;
+                fill: rgb(228, 34, 156);
+            }
         }
     }
     

@@ -18,8 +18,16 @@ export const SingleAnswerBaseStyles = styled.button<{ $isActive: boolean }>`
     }
     
     ${({ $isActive }) => !$isActive && css`
-        &:hover {
-            border: 1px solid rgb(228, 34, 156);
+        @media (hover: hover) {
+            &:hover {
+                border: 1px solid rgb(228, 34, 156);
+            }
+        }
+
+        @media (hover: none) {
+            &:active {
+                border: 1px solid rgb(228, 34, 156);
+            }
         }
     `}
 `;

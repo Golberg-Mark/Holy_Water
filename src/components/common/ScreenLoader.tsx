@@ -113,7 +113,7 @@ const FillCircle = styled(Circle)`
     transform-origin: var(--half-size) var(--half-size);
     stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
     transition: stroke-dasharray 0.3s linear 0s;
-    stroke: #5394fd;
+    stroke: rgb(228, 34, 156);
 `;
 
 const Text = styled.text`

@@ -138,8 +138,16 @@ const StyledLink = styled(Link)`
     color: rgb(235, 47, 154);
     transition: .1s ease-in-out;
     
-    &:hover {
-        color: rgba(235, 47, 154, .6);
+    @media (hover: hover) {
+        &:hover {
+            color: rgba(235, 47, 154, .6);
+        }
+    }
+    
+    @media (hover: none) {
+        &:active {
+            color: rgba(235, 47, 154, .6);
+        }
     }
 `;
 

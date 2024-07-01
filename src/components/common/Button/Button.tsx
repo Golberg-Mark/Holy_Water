@@ -18,8 +18,16 @@ const ButtonStyled = styled.button`
     background-color: rgb(228, 34, 156);
     transition: background-color .1s ease-in-out;
     
-    &:hover {
-        background-color: rgba(228, 34, 156, .8);
+    @media (hover: hover) {
+        &:hover {
+            background-color: rgba(228, 34, 156, .8);
+        }
+    }
+    
+    @media (hover: none) {
+        &:active {
+            background-color: rgba(228, 34, 156, .8);
+        }
     }
     
     &:disabled {
