@@ -1,3 +1,5 @@
+export type QuizExtraData = Record<string, unknown>;
+
 export enum AnswerType {
   SINGLE = 'SINGLE',
   SINGLE_CARD = 'SINGLE_CARD',
@@ -7,6 +9,7 @@ export enum AnswerType {
 
 export interface IQuizAnswer {
   answer: string;
+  extraData?: QuizExtraData;
   coefs: Array<any>;
 }
 

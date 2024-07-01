@@ -6,6 +6,7 @@ import LocalStorageQuiz from '@/utils/localStorageQuiz.ts';
 import { Params, useNavigate, useParams } from 'react-router-dom';
 import wait from '@/utils/wait.ts';
 import Question from '@components/common/Question/Question.tsx';
+import quizExtraDataResolver from '@/utils/quizExtraDataResolver.ts';
 
 interface Props {
   quiz: IQuiz;
@@ -23,13 +24,16 @@ const QuizBody: FC<Props> = ({ quiz, pagesLimit }) => {
   const navigate = useNavigate();
 
   const onAnswerClick: OnAnswerClick = async (answerIndex, isActive) => {
+    if (quiz.answers[answerIndex].extraData) {
+      quizExtraDataResolver(quiz.answers[answerIndex].extraData);
+    }
+
     if (quiz.answerType === AnswerType.CHECKBOX || quiz.answerType === AnswerType.ROUNDED) {
       let currentIndexes = LocalStorageQuiz.getQuizAnswerByOrder(quiz.order);
 
       if (isActive) {
         currentIndexes = currentIndexes.filter((el) => el !== answerIndex);
-      }
-      else {
+      } else {
         currentIndexes.push(answerIndex);
       }
 

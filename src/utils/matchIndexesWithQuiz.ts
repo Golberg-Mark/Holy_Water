@@ -1,5 +1,5 @@
 import LocalStorageQuiz from '@/utils/localStorageQuiz.ts';
-import quizArray from '@/pages/Quiz/quizArray.ts';
+import getQuizArray from '@/pages/Quiz/quizArray.ts';
 import { AnswerType } from '@/interfaces/quiz.ts';
 
 interface IMatchedAnswersWithQuiz {
@@ -13,6 +13,8 @@ const matchIndexesWithAnswers = (): IMatchedAnswersWithQuiz[] | undefined => {
   const answers = LocalStorageQuiz.getQuizAnswers();
 
   if (answers) {
+    const quizArray = getQuizArray();
+
     return Object.keys(answers).map(key => {
       const order = parseInt(key);
       const quizItem = quizArray.find((el) => el.order === order)!;

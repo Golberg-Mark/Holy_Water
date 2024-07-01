@@ -11,7 +11,6 @@ const EmailPage = () => {
 
   const onAnimationEnd: AnimationEventHandler<HTMLOrSVGElement> = (evt) => {
     if (evt.animationName === 'opacity-animation') {
-      console.log('Animation finished');
       toggleIsAnimating(false);
     }
   }
