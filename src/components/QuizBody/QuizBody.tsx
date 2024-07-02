@@ -24,6 +24,8 @@ const QuizBody: FC<Props> = ({ quiz, pagesLimit }) => {
   const navigate = useNavigate();
 
   const onAnswerClick: OnAnswerClick = async (answerIndex, isActive) => {
+    // Here can be your code for connecting this to backend
+
     if (quiz.answers[answerIndex].extraData) {
       quizExtraDataResolver(quiz.answers[answerIndex].extraData);
     }
